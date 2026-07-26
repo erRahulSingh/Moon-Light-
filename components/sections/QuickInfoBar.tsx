@@ -6,11 +6,11 @@ import { INSTITUTE_INFO } from "@/data/coachingData";
 
 export default function QuickInfoBar() {
   return (
-    <div className="bg-[#0F172A] text-white rounded-2xl shadow-xl p-5 sm:p-7 border border-slate-800">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-700/80">
+    <div className="bg-[#0F172A] text-white rounded-2xl shadow-xl p-4 sm:p-7 border border-slate-800">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-4 divide-y-0 divide-slate-700/80">
         
         {/* Item 1: Address */}
-        <div className="flex items-center gap-4 pt-4 md:pt-0 md:px-4 first:px-0">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-4 p-2 sm:px-4">
           <div className="p-2.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-400 shrink-0">
             <MapPin className="w-6 h-6 text-amber-400" />
           </div>

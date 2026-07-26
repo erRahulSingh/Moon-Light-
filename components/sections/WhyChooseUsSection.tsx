@@ -47,21 +47,21 @@ export default function WhyChooseUsSection() {
           </h2>
         </div>
 
-        {/* 5 Feature Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        {/* 5 Feature Cards - 2 Per Row on Mobile */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-5">
           {items.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl p-6 text-center border border-slate-200/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col items-center justify-start space-y-3"
+              className="bg-white rounded-2xl p-4 sm:p-6 text-center border border-slate-200/80 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col items-center justify-start space-y-2.5"
             >
-              <div className="p-3 rounded-full bg-slate-50 border border-slate-100 shrink-0">
+              <div className="p-2 sm:p-3 rounded-full bg-slate-50 border border-slate-100 shrink-0">
                 {item.icon}
               </div>
-              <div className="space-y-1.5">
-                <h3 className="text-base font-poppins font-black text-[#0F172A] leading-snug">
+              <div className="space-y-1">
+                <h3 className="text-xs sm:text-base font-poppins font-black text-[#0F172A] leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-xs font-medium text-slate-500 leading-relaxed">
+                <p className="text-[11px] sm:text-xs font-medium text-slate-500 leading-relaxed">
                   {item.description}
                 </p>
               </div>

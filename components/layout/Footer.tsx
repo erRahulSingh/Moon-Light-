@@ -12,11 +12,11 @@ export default function Footer() {
     <footer className="bg-[#0B192C] text-slate-300 pt-14 pb-6 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main 4 Column Grid with Vertical Dividers */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-slate-800/80 divide-y md:divide-y-0 md:divide-x divide-slate-800/80">
+        {/* Main 4 Column Grid - 2 per row on mobile */}
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 pb-10 border-b border-slate-800/80">
           
           {/* Column 1: Brand Info */}
-          <div className="lg:col-span-4 space-y-4 md:pr-6">
+          <div className="col-span-2 lg:col-span-4 space-y-4 md:pr-6">
             <Link href="/" className="flex items-center gap-3 group">
               <Image
                 src="/logo.png"
@@ -135,7 +135,7 @@ export default function Footer() {
           </div>
 
           {/* Column 4: Contact Us */}
-          <div className="lg:col-span-4 space-y-3 pt-6 md:pt-0 md:pl-6">
+          <div className="col-span-2 lg:col-span-4 space-y-3 pt-4 md:pt-0">
             <h4 className="text-xs font-poppins font-black text-white uppercase tracking-wider">
               Contact Us
             </h4>

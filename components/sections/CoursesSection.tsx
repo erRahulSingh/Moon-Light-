@@ -61,38 +61,38 @@ export default function CoursesSection() {
           </p>
         </div>
 
-        {/* 4 Course Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 4 Course Cards Grid - 2 Per Row on Mobile */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {coursesData.map((course) => (
             <div
               key={course.id}
-              className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between border-2 transition-all hover:-translate-y-1 hover:shadow-xl ${course.bgClass}`}
+              className={`rounded-2xl p-4 sm:p-7 flex flex-col justify-between border-2 transition-all hover:-translate-y-1 hover:shadow-xl ${course.bgClass}`}
             >
-              <div className="space-y-4 text-center flex flex-col items-center">
+              <div className="space-y-3 sm:space-y-4 text-center flex flex-col items-center">
                 {/* Icon Container */}
-                <div className="p-3.5 rounded-2xl bg-white shadow-sm flex items-center justify-center border border-slate-100">
+                <div className="p-2.5 sm:p-3.5 rounded-2xl bg-white shadow-sm flex items-center justify-center border border-slate-100">
                   {course.icon}
                 </div>
 
                 {/* Course Title */}
-                <h3 className={`text-lg font-poppins font-black tracking-tight ${course.textColor}`}>
+                <h3 className={`text-sm sm:text-lg font-poppins font-black tracking-tight ${course.textColor}`}>
                   {course.title}
                 </h3>
 
                 {/* Course Description */}
-                <p className="text-slate-600 text-sm font-medium leading-relaxed">
+                <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed">
                   {course.description}
                 </p>
               </div>
 
               {/* Action Button */}
-              <div className="pt-6 text-center">
+              <div className="pt-4 sm:pt-6 text-center">
                 <Link
                   href="/courses"
-                  className={`inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-bold text-sm shadow-sm transition-transform hover:scale-105 ${course.buttonClass}`}
+                  className={`inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-lg font-bold text-xs sm:text-sm shadow-sm transition-transform hover:scale-105 ${course.buttonClass}`}
                 >
                   <span>Know More</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </Link>
               </div>
             </div>
@@ -100,10 +100,10 @@ export default function CoursesSection() {
         </div>
 
         {/* View All Courses Centered CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-10 sm:mt-12">
           <Link
             href="/courses"
-            className="inline-flex items-center gap-2 bg-[#0F172A] hover:bg-slate-800 text-white font-extrabold px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all text-sm"
+            className="inline-flex items-center gap-2 bg-[#0F172A] hover:bg-slate-800 text-white font-extrabold px-6 py-3 sm:px-8 sm:py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all text-xs sm:text-sm"
           >
             <span>View All Courses</span>
           </Link>
