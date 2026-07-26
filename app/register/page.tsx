@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { User, Mail, Phone, Lock, ArrowRight, Moon, BookOpen, CheckCircle2 } from "lucide-react";
 
@@ -43,15 +44,15 @@ export default function RegisterPage() {
       <div className="absolute bottom-10 right-10 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="sm:mx-auto sm:w-full sm:max-w-md text-center z-10">
-        <Link href="/" className="inline-flex items-center gap-3 group mb-4">
-          <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-slate-900 text-amber-400 border border-amber-400/30 shadow-lg group-hover:scale-105 transition-transform">
-            <Moon className="w-7 h-7 absolute -top-1 -right-0.5 text-amber-400 fill-amber-400 transform -rotate-12" />
-            <BookOpen className="w-6 h-6 text-white absolute bottom-1.5" />
-          </div>
-          <div className="flex flex-col text-left">
-            <span className="font-poppins font-black text-xl text-white tracking-tight">MOONLIGHT</span>
-            <span className="font-poppins font-extrabold text-sm text-emerald-400 tracking-wide">COACHING CENTRE</span>
-          </div>
+        <Link href="/" className="inline-flex items-center justify-center group mb-4">
+          <Image
+            src="/logo.png"
+            alt="Moonlight Coaching Centre"
+            width={240}
+            height={70}
+            className="h-14 sm:h-16 w-auto object-contain bg-white/95 p-1.5 rounded-2xl shadow-xl group-hover:scale-105 transition-transform"
+            priority
+          />
         </Link>
 
         <h2 className="text-2xl font-black text-white tracking-tight sm:text-3xl">

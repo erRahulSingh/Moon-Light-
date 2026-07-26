@@ -1,15 +1,36 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
-import { TESTIMONIALS } from "@/data/coachingData";
+import { Star } from "lucide-react";
 
 export default function TestimonialsSection() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const testimonials = [
+    {
+      id: 1,
+      name: "Ritik Kumar",
+      classTag: "Class 10th",
+      text: "Moonlight Coaching Centre has helped me a lot in improving my concepts. The teachers are very supportive and regular tests really help.",
+      avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200",
+    },
+    {
+      id: 2,
+      name: "Anjali Kumari",
+      classTag: "Class 12th",
+      text: "The library is amazing! It has all the reference books I need for my preparation. The environment is perfect for study.",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
+    },
+    {
+      id: 3,
+      name: "Saurabh Jha",
+      classTag: "Class 11th",
+      text: "Best coaching in Sitamarhi! I improved my confidence and scores in a very short time.",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
+    },
+  ];
 
   return (
-    <section className="py-16 bg-slate-50 overflow-hidden" id="testimonials">
+    <section className="py-16 bg-white overflow-hidden" id="testimonials">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -23,29 +44,29 @@ export default function TestimonialsSection() {
           </h2>
         </div>
 
-        {/* Testimonials Cards Row - 1 Single Line Layout */}
-        <div className="flex flex-row overflow-x-auto gap-6 pb-6 pt-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-slate-300">
-          {TESTIMONIALS.map((item) => (
+        {/* 3 Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {testimonials.map((item) => (
             <div
               key={item.id}
-              className="min-w-[290px] sm:min-w-[340px] md:min-w-[380px] shrink-0 snap-start bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-card flex flex-col justify-between hover:shadow-xl transition-all"
+              className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm flex flex-col justify-between hover:shadow-lg transition-all"
             >
-              <div className="space-y-4">
-                {/* Yellow Quote Marks */}
-                <div className="text-amber-500 text-4xl leading-none font-serif">
-                  ““
+              <div className="space-y-3">
+                {/* Yellow Quote Mark */}
+                <div className="p-1 rounded-md bg-amber-400/20 text-amber-500 w-fit">
+                  <span className="text-xl font-black leading-none block font-serif">“</span>
                 </div>
                 
-                {/* Feedback Text */}
-                <p className="text-slate-700 text-sm font-medium leading-relaxed italic">
-                  "{item.text}"
+                {/* Review Text */}
+                <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed">
+                  {item.text}
                 </p>
               </div>
 
-              {/* Bottom Student Profile Info */}
-              <div className="pt-6 border-t border-slate-100 flex items-center justify-between mt-6">
+              {/* Bottom Student Profile & Stars */}
+              <div className="pt-6 flex items-center justify-between mt-4">
                 <div className="flex items-center gap-3">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-amber-400 shadow-sm shrink-0">
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden border border-slate-200 shrink-0">
                     <Image
                       src={item.avatar}
                       alt={item.name}
@@ -54,10 +75,10 @@ export default function TestimonialsSection() {
                     />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-[#0F172A]">
+                    <h4 className="text-xs font-black text-[#0F172A]">
                       {item.name}
                     </h4>
-                    <p className="text-xs font-semibold text-slate-500">
+                    <p className="text-[11px] font-semibold text-slate-500">
                       {item.classTag}
                     </p>
                   </div>
@@ -65,8 +86,8 @@ export default function TestimonialsSection() {
 
                 {/* 5 Yellow Stars */}
                 <div className="flex items-center gap-0.5">
-                  {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-amber-400 fill-amber-400" />
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
                   ))}
                 </div>
               </div>
@@ -75,7 +96,7 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Carousel Pagination Indicator Dots */}
+        {/* Carousel Pagination Dots */}
         <div className="flex items-center justify-center gap-2 mt-8">
           <span className="w-3 h-3 rounded-full bg-[#F59E0B]" />
           <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />

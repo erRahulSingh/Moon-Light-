@@ -7,43 +7,45 @@ import { BookOpen, ShieldCheck, Newspaper, Users, Award, ArrowRight } from "luci
 import { LIBRARY_FEATURES } from "@/data/coachingData";
 
 export default function LibrarySection() {
-  const featureIcons = [
-    <BookOpen className="w-5 h-5 text-amber-600" key="1" />,
-    <ShieldCheck className="w-5 h-5 text-emerald-600" key="2" />,
-    <Newspaper className="w-5 h-5 text-blue-600" key="3" />,
-    <Users className="w-5 h-5 text-purple-600" key="4" />,
-    <Award className="w-5 h-5 text-amber-600" key="5" />,
+  const features = [
+    { text: "Wide collection of books & reference materials", icon: <BookOpen className="w-5 h-5 text-purple-700" /> },
+    { text: "Peaceful reading environment", icon: <ShieldCheck className="w-5 h-5 text-emerald-700" /> },
+    { text: "Newspapers, magazines & digital resources", icon: <Newspaper className="w-5 h-5 text-blue-700" /> },
+    { text: "Separate Reading Room for Boys & Girls", icon: <Users className="w-5 h-5 text-amber-700" /> },
+    { text: "Library membership for all students", icon: <Award className="w-5 h-5 text-amber-600" /> },
   ];
 
   return (
-    <section className="py-16 bg-slate-50" id="library">
+    <section className="py-16 bg-white" id="library">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           {/* Left Column Image with Top-Left Yellow Accent Corner */}
           <div className="lg:col-span-6 relative">
             
-            {/* Top-Left Yellow Curved Shape */}
-            <div className="absolute -top-4 -left-4 w-28 h-28 bg-[#F59E0B] rounded-tl-3xl -z-0" />
+            {/* Top-Left Yellow Curved Accent */}
+            <div className="absolute -top-3 -left-3 w-28 h-28 bg-[#F59E0B] rounded-tl-3xl z-0" />
 
             {/* Library Photo */}
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-10 aspect-[4/3]">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white z-10 aspect-[4/3]">
               <Image
-                src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=800"
-                alt="Moonlight Coaching Centre Library & Reading Room"
+                src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=1000"
+                alt="Moonlight Coaching Centre Library & Reading Hall"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
               />
             </div>
 
           </div>
 
-          {/* Right Column Copy & Feature Checklist */}
-          <div className="lg:col-span-6 space-y-6">
+          {/* Right Column Copy & Feature List */}
+          <div className="lg:col-span-6 space-y-5">
             
             {/* Yellow Tag */}
-            <div className="inline-block px-4 py-1.5 rounded-md bg-[#F59E0B] text-slate-950 font-extrabold text-xs tracking-wider uppercase shadow-sm">
-              OUR LIBRARY
+            <div>
+              <span className="inline-block px-4 py-1.5 rounded-md bg-[#F59E0B] text-slate-950 font-extrabold text-xs tracking-wider uppercase shadow-sm">
+                OUR LIBRARY
+              </span>
             </div>
 
             {/* Headline */}
@@ -51,33 +53,32 @@ export default function LibrarySection() {
               Read Today, Lead Tomorrow
             </h2>
 
-            {/* Subtitle / Paragraph */}
+            {/* Paragraph Subtitle */}
             <p className="text-slate-600 font-medium text-base leading-relaxed">
-              Our library is a hub of knowledge and inspiration. We provide thousands of books, a peaceful study environment and all the resources students need to excel in their academic and competitive journey.
+              Our library is a hub of knowledge and inspiration. We provide thousands of books, a peaceful study environment and all the resources students need to excel.
             </p>
 
             {/* Feature List */}
-            <div className="space-y-3 pt-2">
-              {LIBRARY_FEATURES.map((feature, idx) => (
-                <div key={idx} className="flex items-center gap-3 bg-white p-3 rounded-2xl border border-slate-200/80 shadow-sm">
-                  <div className="p-2 rounded-xl bg-slate-50 shrink-0">
-                    {featureIcons[idx % featureIcons.length]}
+            <div className="space-y-2.5 pt-1">
+              {features.map((item, idx) => (
+                <div key={idx} className="flex items-center gap-3">
+                  <div className="p-1.5 rounded-lg bg-slate-100 shrink-0">
+                    {item.icon}
                   </div>
-                  <span className="text-sm font-bold text-slate-800">
-                    {feature}
+                  <span className="text-sm font-semibold text-slate-800">
+                    {item.text}
                   </span>
                 </div>
               ))}
             </div>
 
             {/* Explore Library Green Button */}
-            <div className="pt-4">
+            <div className="pt-3">
               <Link
                 href="/library"
-                className="inline-flex items-center gap-2 bg-[#066E38] hover:bg-emerald-800 text-white font-extrabold px-8 py-3.5 rounded-2xl shadow-lg hover:shadow-xl transition-all text-sm"
+                className="inline-flex items-center gap-2 bg-[#066E38] hover:bg-[#055c2e] text-white font-extrabold px-6 py-3 rounded-lg shadow-md transition-all text-sm"
               >
                 <span>Explore Library</span>
-                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
