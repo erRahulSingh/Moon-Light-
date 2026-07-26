@@ -9,6 +9,10 @@ out/
 # Expo / React Native build output
 .expo/
 dist/
+android/
+ios/
+**/android/
+**/ios/
 
 # Local env files
 .env*.local

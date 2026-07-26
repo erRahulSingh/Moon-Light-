@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, Menu, X, GraduationCap, Moon, BookOpen } from "lucide-react";
+import { Phone, Menu, X, GraduationCap, Moon, BookOpen, User } from "lucide-react";
 import { INSTITUTE_INFO } from "@/data/coachingData";
 
 export default function Navbar() {
@@ -12,13 +12,11 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
     { name: "Courses", href: "/courses" },
+    { name: "Homework", href: "/homework" },
     { name: "Library", href: "/library" },
-    { name: "Faculty", href: "/faculty" },
     { name: "Gallery", href: "/gallery" },
     { name: "Admission", href: "/admissions" },
-    { name: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -65,15 +63,22 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Call CTA Button with Yellow Backdrop Arc */}
-          <div className="hidden sm:flex items-center relative">
-            <div className="absolute right-0 -top-6 -bottom-6 w-32 bg-[#F59E0B] rounded-bl-full -z-10 opacity-90"></div>
+          {/* CTA Buttons */}
+          <div className="hidden sm:flex items-center gap-3">
+            <Link
+              href="/login"
+              className="flex items-center gap-1.5 bg-amber-400 hover:bg-amber-500 text-slate-950 font-black px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all text-xs uppercase tracking-wider"
+            >
+              <User className="w-3.5 h-3.5" />
+              <span>Login</span>
+            </Link>
+
             <a
               href={`tel:${INSTITUTE_INFO.phone}`}
-              className="flex items-center gap-2 bg-[#0F172A] hover:bg-slate-800 text-white font-bold px-5 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all text-sm group"
+              className="flex items-center gap-2 bg-[#0F172A] hover:bg-slate-800 text-white font-bold px-4 py-2 rounded-full shadow-md hover:shadow-lg transition-all text-xs group"
             >
-              <div className="w-6 h-6 rounded-full bg-amber-400/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Phone className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+              <div className="w-5 h-5 rounded-full bg-amber-400/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Phone className="w-3 h-3 text-amber-400 fill-amber-400" />
               </div>
               <span className="tracking-wide">{INSTITUTE_INFO.phone}</span>
             </a>

@@ -1,19 +1,23 @@
 {
   "expo": {
     "name": "Moonlight Coaching",
-    "slug": "moonlight-coaching",
+    "slug": "rahul-kushwaha",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": false,
+    "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#0F172A"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.moonlight.coaching",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "package": "com.moonlight.coaching",
@@ -24,6 +28,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c36f0439-13e1-4849-af20-0a8f8c0fc69a"
+      }
+    },
+    "owner": "sitamarhivibes"
   }
 }
