@@ -4,19 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { INSTITUTE_INFO } from "@/data/coachingData";
-import fs from "fs";
-import path from "path";
-
-// Ensure official uploaded logo is copied to public/logo.png
-try {
-  const logoSrc = "C:/Users/rahul/.gemini/antigravity-ide/brain/44e675ff-5e1e-4038-b6dd-c137efeff913/media__1785083985074.png";
-  const logoDest = path.join(process.cwd(), "public", "logo.png");
-  if (fs.existsSync(logoSrc)) {
-    fs.copyFileSync(logoSrc, logoDest);
-  }
-} catch (e) {
-  // ignore
-}
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
